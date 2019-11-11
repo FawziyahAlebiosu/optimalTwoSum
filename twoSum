@@ -1,0 +1,31 @@
+/*
+FAWZIYAH ALEBIOSU
+Given a sorted array that contains integers, return true if there exists a pair of integers that sum up to zero
+Sample testcase : [-3, 1, 3, 5]
+*/
+public class twoSum {
+
+    public boolean twoSum(int[] arrayGiven) {
+        if (arrayGiven == null || arrayGiven.length < 2) {
+            return false;
+        }
+        int i = 0;
+        int j = arrayGiven.length - 1;
+
+
+        while (i < j) {
+            int sum = arrayGiven[i] + arrayGiven[j];
+
+            if (sum > 0) {
+                j--;
+            } else if (sum < 0) {
+                i++;
+            } else {
+                return true;
+            }
+
+        }
+        return false;
+
+    }
+}
